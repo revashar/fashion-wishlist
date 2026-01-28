@@ -1,0 +1,19 @@
+<h2>Find Nearby Stores</h2>
+
+<form action="/store-locator" method="POST">
+  <label>Enter ZIP Code: 
+    <input type="text" name="zip" required>
+  </label>
+  <button type="submit">Search</button>
+</form>
+
+{{#if results}}
+  <h3>Closest Stores Near {{zip}}</h3>
+  <ul>
+    {{#each results}}
+      <li>
+        <strong>{{brand}}</strong>: {{address}}
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}

@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+
+<ul>
+  {{#each users}}
+    <li>
+      <a href="/user-wishlist/{{this._id}}">
+        {{this.username}}'s Wishlist
+      </a>
+    </li>
+  {{/each}}
+</ul>

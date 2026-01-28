@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-900 text-gray-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+
+  <!-- Header / Navbar -->
+  <header class="bg-gray-800 shadow-md">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <ul class="flex space-x-6">
+        <li><a href="/" class="hover:text-gray-300">Home</a></li>
+        {{#if user}}
+          <li><a href="/user-wishlist/{{user._id}}" class="hover:text-gray-300">{{user.username}}'s Wishlist</a></li>
+          <li><a href="/add-item" class="hover:text-gray-300">Add Item</a></li>
+          <li><a href="/logout" class="hover:text-gray-300">Logout</a></li>
+        {{else}}
+          <li><a href="/login" class="hover:text-gray-300">Login</a></li>
+          <li><a href="/register" class="hover:text-gray-300">Register</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 container mx-auto px-4 py-8">
+    {{{body}}}
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-400 py-4 text-center">
+    <p>© 2024 Wishlist App. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

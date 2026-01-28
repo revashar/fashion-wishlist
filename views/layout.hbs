@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="dark-mode">
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/brands">Brands</a></li>
+	<li><a href="/wishlists">All Wishlists</a></li> 
+
+        {{#if user}}
+          <li><a href="/user-wishlist/{{user._id}}">{{user.username}}'s Wishlist</a></li>
+	  <li><a href="/items">All Items</a></li>
+          <li><a href="/add-item">Add Item</a></li>
+	  <li><a href="/store-locator">Store Locator</a></li>
+          <li><a href="/logout">Logout</a></li>
+        {{else}}
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+  </header>
+
+  {{!-- Hero section for home page --}}
+  {{#if isHome}}
+  <div class="hero">
+    <h1>Welcome to Fashion Wishlist</h1>
+    <p>Use this app to keep track of all the fashion pieces you love!</p>
+  </div>
+  {{/if}}
+
+  <main>
+    {{{body}}}
+  </main>
+
+  <footer>
+    <p>© 2025 FashionWishlist App. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/confirmDelete.js"></script>
+  <script src="/js/wishlistFilters.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "name": "final-project-revashar",
+  "version": "1.0.0",
+  "description": "Fashion Wishlist is a web application that allows users to curate their dream wardrobe by saving clothing items from their favorite fashion brands. Users can create accounts, select their favorite brands, and build a wishlist of clothing items by entering product details — such as the item name, category, color, size, and a direct link to the brand’s website.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.mjs",
+    "dev": "nodemon app.mjs",
+    "render-build": "rm -rf node_modules && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar/issues"
+  },
+  "homepage": "https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar#readme",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "bcryptjs": "^3.0.3",
+    "cheerio": "^1.1.2",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "express-session": "^1.18.2",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.19.2",
+    "mongoose-slug-plugin": "^2.1.0",
+    "puppeteer": "^24.30.0"
+  },
+  "devDependencies": {
+    "chai": "^6.2.1",
+    "mocha": "^11.7.5",
+    "nodemon": "^3.1.10"
+  }
+}

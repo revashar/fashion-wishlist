@@ -1,0 +1,35 @@
+<div class="item-card">
+  <h3 class="item-name">{{name}}</h3>
+
+  {{#if image}}
+    <img src="{{image}}" alt="{{name}}" class="item-image">
+  {{/if}}
+
+  <p class="item-details">
+    {{category}} | {{size}} | {{#each color}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}
+  </p>
+
+  <div class="item-actions-inline">
+    <a href="{{link}}" target="_blank" class="view-btn">View Item</a>
+
+    {{!-- Add to wishlist button / badge (All Items page) --}}
+    {{#if showAddButton}}
+      {{#if ../user}}
+        {{#if (includes ../user.wishlist _id)}}
+          <span class="wishlist-badge">Already in wishlist</span>
+        {{else}}
+          <button class="add-wishlist-btn" data-item-id="{{_id}}">
+            Add to wishlist
+          </button>
+        {{/if}}
+      {{/if}}
+    {{/if}}
+
+    {{!-- Delete button (only on user's wishlist page) --}}
+    {{#if showDeleteButton}}
+      <form action="/delete-item/{{_id}}" method="POST" class="inline-form">
+        <button type="submit" class="delete-btn">Delete</button>
+      </form>
+    {{/if}}
+  </div>
+</div>

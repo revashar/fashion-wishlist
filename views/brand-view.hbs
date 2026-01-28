@@ -1,0 +1,67 @@
+<h1>{{brand.name}}</h1>
+
+{{#if items.length}}
+  <!-- Filters -->
+  <div class="wishlist-filters">
+    <label>
+      Color
+      <select id="filter-color">
+        <option value="">All</option>
+        {{#each options.allColors}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+    </label>
+
+    <label>
+      Category
+      <select id="filter-category">
+        <option value="">All</option>
+        {{#each options.allCategories}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+    </label>
+
+    <label>
+      Season
+      <select id="filter-season">
+        <option value="">All</option>
+        {{#each options.allSeasons}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+    </label>
+
+    <button id="apply-filters" class="filter-btn">Apply Filters</button>
+    <button id="reset-filters" class="reset-btn">Reset Filters</button>
+  </div>
+
+  <ul class="wishlist-items" id="wishlist-items">
+    {{#each items}}
+      <li class="wishlist-item"
+          data-color="{{this.color}}"
+          data-category="{{this.category}}"
+          data-season="{{this.season}}"
+          data-brand="{{brand.name}}">
+        {{#if this.image}}
+          <img src="{{this.image}}" alt="{{this.name}}" class="item-image">
+        {{/if}}
+        <span class="item-name">{{this.name}}</span>
+        <div class="item-actions">
+          <a href="{{this.link}}" target="_blank" class="view-btn">View Item</a>
+          {{#if ../currentUser}}
+            {{!-- Only show delete if this item is in your wishlist --}}
+            {{#if this.isInCurrentUserWishlist}}
+              <form action="/delete-item/{{this._id}}" method="POST">
+                <button class="delete-btn" type="submit">Delete</button>
+              </form>
+            {{/if}}
+          {{/if}}
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p class="empty">No items have been added for this brand yet.</p>
+{{/if}}

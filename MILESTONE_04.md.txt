@@ -1,0 +1,91 @@
+Milestone 04 - Final Project Documentation
+===
+
+NetID
+---
+rs8276
+Name
+---
+Reva Sharma
+
+Repository Link
+---
+https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar
+
+URL for deployed site 
+---
+https://final-project-revashar.onrender.com/
+
+URL for form 1 (from previous milestone) 
+---
+https://final-project-revashar.onrender.com/login
+
+Special Instructions for Form 1
+---
+Login with user: reva, password: sampleuser  
+Or register a new user to access the form.
+
+URL for form 2
+---
+https://final-project-revashar.onrender.com/add-item
+
+Special Instructions for Form 2
+---
+Same login/register instructions apply.
+
+URL for form 3 (from previous milestone) 
+---
+https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar/blob/main/public/js/addToWishlist.js#L10
+
+Special Instructions for Form 3
+---
+This is an add to wishlist button which essentially allows users to add any items that are available on the all items page without manually filling in the whole add-items form (and won't work if the user already has that item on their wishlist)
+
+First link to github line number(s) for constructor, HOF, etc.
+---
+https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar/blob/main/app.mjs#L194 ; 
+https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar/blob/main/app.mjs#L202
+
+Second link to github line number(s) for constructor, HOF, etc.
+---
+https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar/blob/main/app.mjs#L90 ; 
+
+
+Short description for links above
+---
+Using built-in higher order array methods like filter, map and flatMap, includes... 
+
+Link to github line number(s) for schemas (db.js or models folder)
+---
+https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar/db.mjs
+
+Description of research topics above with points
+---  
+4 points  - Integrated image handling using Cheerio for scraping as well as micro link API for websites with stricter scraping blockers 
+
+2 points - 2 Mocha tests (had a 3rd one for add item but that one was getting tricky since I'd have to update it each time I ran the test and it was hard adding that much manual info for diff clothing items into the testing file, (because once it added once it would say it failed because you can't add the same clothing item twice), but I have that version of the code too (and you can see the items from multiple iterations of running the test code on the all items page) 
+
+4 points - Used Geocoding API (to convert zip code to latitude/longitude) and Places AI (for nearby search functionality) from Google Maps API so that users could input their zip code and find the closest store locations for brands they're interested in (some relevant documentation linked in attribution)
+
+Links to github line number(s) for research topics described above (one link per line)
+---
+Images - https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar/blob/main/app.mjs#L365
+
+Mocha tests - https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar/blob/main/tests/puppeteer-wishlist.test.mjs ; Screenshot: https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar/blob/main/documentation/Screenshot%20of%20tests%20passing.png ; 3rd test version: https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar/blob/main/tests/scrapped_test3.mjs
+
+Google Maps API - https://github.com/nyu-csci-ua-0467-001-002-fall-2025/final-project-revashar/blob/main/app.mjs#L668
+
+Optional project notes 
+--- 
+- Must be logged in to add or delete wishlist items  
+- Images for wishlist items are automatically fetched from provided URLs
+
+Attributions
+---
+https://medium.com/swlh/web-scraping-101-cheerio-with-node-to-the-rescue-9e7883d121ebhttps://www.mongodb.com/docs/atlas/security/ip-access-list/
+https://oxylabs.io/blog/cheerio-web-scraping
+https://blog.apify.com/web-scraping-with-cheerio/
+https://www.freecodecamp.org/news/how-to-enhance-embedded-links-in-react-with-microlinks/
+https://developers.google.com/maps/documentation/geocoding/overview
+https://developers.google.com/maps/documentation/places/web-service/legacy/search-nearby
+https://afi.io/blog/osrm-table-api-free-and-open-source-distance-matrix-api/?ref=blog.afi.io

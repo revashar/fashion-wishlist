@@ -1,0 +1,190 @@
+<h1>{{title}}</h1>
+
+<form action="/add-item" method="POST" class="add-item-form">
+  <label for="name">Item Name:</label>
+  <input type="text" name="name" id="name" required>
+
+  <label for="category">Category:</label>
+  <select name="category" id="category" required>
+    <option value="">Select category</option>
+
+    <!-- Tops -->
+    <optgroup label="Tops">
+      <option value="T-shirt">T-shirt</option>
+      <option value="Blouse">Blouse</option>
+      <option value="Shirt">Shirt</option>
+      <option value="Tank Top">Tank Top</option>
+      <option value="Sweater">Sweater</option>
+    </optgroup>
+
+    <!-- Bottoms -->
+    <optgroup label="Bottoms">
+      <option value="Jeans">Jeans</option>
+      <option value="Pants">Pants</option>
+      <option value="Shorts">Shorts</option>
+      <option value="Skirt">Skirt</option>
+    </optgroup>
+
+    <!-- Outerwear -->
+    <optgroup label="Outerwear">
+      <option value="Jacket">Jacket</option>
+      <option value="Coat">Coat</option>
+      <option value="Blazer">Blazer</option>
+    </optgroup>
+
+    <!-- Dresses & Jumpsuits -->
+    <optgroup label="Dresses & Jumpsuits">
+      <option value="Dress">Dress</option>
+      <option value="Jumpsuit">Jumpsuit</option>
+      <option value="Romper">Romper</option>
+    </optgroup>
+
+    <!-- Footwear -->
+    <optgroup label="Footwear">
+      <option value="Footwear">Footwear</option>
+    </optgroup>
+
+    <!-- Accessories -->
+    <optgroup label="Accessories">
+      <option value="Hat">Hat</option>
+      <option value="Scarf">Scarf</option>
+      <option value="Belt">Belt</option>
+      <option value="Bag">Bag</option>
+    </optgroup>
+  </select>
+
+  <label for="color">Color (select all that apply):</label>
+  <div class="color-options">
+    <div class="color-row">
+      <input type="checkbox" name="color" value="Black" id="color-black">
+      <label for="color-black">Black</label>
+    </div>
+    <div class="color-row">
+      <input type="checkbox" name="color" value="White" id="color-white">
+      <label for="color-white">White</label>
+    </div>
+    <div class="color-row">
+      <input type="checkbox" name="color" value="Gray" id="color-gray">
+      <label for="color-gray">Gray</label>
+    </div>
+    <div class="color-row">
+      <input type="checkbox" name="color" value="Red" id="color-red">
+      <label for="color-red">Red</label>
+    </div>
+    <div class="color-row">
+      <input type="checkbox" name="color" value="Blue" id="color-blue">
+      <label for="color-blue">Blue</label>
+    </div>
+    <div class="color-row">
+      <input type="checkbox" name="color" value="Green" id="color-green">
+      <label for="color-green">Green</label>
+    </div>
+    <div class="color-row">
+      <input type="checkbox" name="color" value="Yellow" id="color-yellow">
+      <label for="color-yellow">Yellow</label>
+    </div>
+    <div class="color-row">
+      <input type="checkbox" name="color" value="Pink" id="color-pink">
+      <label for="color-pink">Pink</label>
+    </div>
+    <div class="color-row">
+      <input type="checkbox" name="color" value="Purple" id="color-purple">
+      <label for="color-purple">Purple</label>
+    </div>
+    <div class="color-row">
+      <input type="checkbox" name="color" value="Orange" id="color-orange">
+      <label for="color-orange">Orange</label>
+    </div>
+    <div class="color-row">
+      <input type="checkbox" name="color" value="Brown" id="color-brown">
+      <label for="color-brown">Brown</label>
+    </div>
+    <div class="color-row">
+      <input type="checkbox" name="color" value="Beige" id="color-beige">
+      <label for="color-beige">Beige</label>
+    </div>
+    <div class="color-row">
+      <input type="checkbox" name="color" value="Gold" id="color-gold">
+      <label for="color-gold">Gold</label>
+    </div>
+    <div class="color-row">
+      <input type="checkbox" name="color" value="Silver" id="color-silver">
+      <label for="color-silver">Silver</label>
+    </div>
+  </div>
+
+  <label for="size">Size:</label>
+  <select name="size" id="size" required>
+    <option value="">Select size</option>
+    <!-- Letter sizes -->
+    <option value="XXS">XXS</option>
+    <option value="XS">XS</option>
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+    <option value="XXL">XXL</option>
+    <!-- Number sizes 0-42 -->
+    {{#each (range 0 42)}}
+      <option value="{{this}}">{{this}}</option>
+    {{/each}}
+  </select>
+
+  <label for="link">Link:</label>
+  <input type="url" name="link" id="link">
+
+  <label for="brandSelect">Brand:</label>
+  <select id="brandSelect" name="brandSelect" onchange="toggleBrandInput()" required>
+    {{#if brands.length}}
+      {{#each brands}}
+        <option value="{{this._id}}">{{this.name}}</option>
+      {{/each}}
+    {{/if}}
+    <option value="other">Other (Enter manually)</option>
+  </select>
+
+  <input type="text" id="brandManual" name="brandManual" placeholder="Enter brand name" style="display:none; margin-top:5px;">
+
+  <label for="season">Season (select all):</label>
+  <div class="season-options">
+    <div class="season-row">
+      <input type="checkbox" name="season" value="Winter">
+      <span>Winter</span>
+    </div>
+    <div class="season-row">
+      <input type="checkbox" name="season" value="Spring">
+      <span>Spring</span>
+    </div>
+    <div class="season-row">
+      <input type="checkbox" name="season" value="Summer">
+      <span>Summer</span>
+    </div>
+    <div class="season-row">
+      <input type="checkbox" name="season" value="Autumn">
+      <span>Autumn</span>
+    </div>
+  </div>
+ 
+  <button type="submit">Add Item</button>
+</form>
+
+<script>
+function toggleBrandInput() {
+  const select = document.getElementById('brandSelect');
+  const manualInput = document.getElementById('brandManual');
+
+  if (select.value === 'other') {
+    manualInput.style.display = 'block';
+    manualInput.required = true;
+  } else {
+    manualInput.style.display = 'none';
+    manualInput.required = false;
+    manualInput.value = '';
+  }
+}
+
+// Ensure brandManual input shows if page reloads with 'other' selected
+document.addEventListener('DOMContentLoaded', () => {
+  toggleBrandInput();
+});
+</script>

@@ -1,0 +1,457 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body and overall layout */
+body {
+  background-color: #121212; /* dark background */
+  color: #f5f5f5;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+/* Header links: horizontal, evenly spaced */
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+header nav li {
+  margin: 0;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+header nav a:hover {
+  background-color: #4682b4;
+  transform: scale(1.05);
+}
+
+header nav a:active {
+  background-color: #3a6f98;
+  transform: scale(0.98);
+}
+
+/* Main content */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* --- Wishlist Section --- */
+.wishlist-section {
+  width: 100%;
+  margin: 2rem auto;
+}
+
+/* Header with Add button */
+.wishlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.wishlist-header h2 {
+  font-size: 1.8rem;
+  color: #f5f5f5;
+}
+
+.add-btn {
+  background-color: #2e8b57;
+  color: white;
+  font-weight: normal;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.2s ease-in-out;
+}
+
+.add-btn:hover {
+  background-color: #256d47;
+}
+
+/* Wishlist items */
+.wishlist-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wishlist-item {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Buttons container */
+
+
+/* Buttons shared styles */
+.view-btn, .delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0 12px;
+  height: 35px;
+  min-width: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  vertical-align: middle; /* extra safeguard */
+}
+
+/* Remove default form spacing */
+.item-actions form {
+  margin: 0;
+}
+
+/* View button */
+.view-btn {
+  background-color: #4682b4;
+  color: white;
+  border-color: #4682b4;
+}
+
+.view-btn:hover {
+  background-color: #3a6f98;
+  border-color: #3a6f98;
+}
+
+/* Delete button */
+.delete-btn {
+  background-color: #b44646;
+  color: white;
+  border-color: #b44646;
+}
+
+.delete-btn:hover {
+  background-color: #992f2f;
+  border-color: #992f2f;
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  color: #aaa;
+  margin-top: 2rem;
+}
+
+/* Brand page styles */
+.brand-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.brand-card {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.brand-card a {
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
+
+.brand-card a:hover {
+  text-decoration: underline;
+}
+
+/* Hero section for home page */
+.hero {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #f5f5f5;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* --- Add Item Form --- */
+.add-item-form {
+  display: flex;
+  flex-direction: column; /* stack fields vertically */
+  gap: 1rem; /* spacing between fields */
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.add-item-form label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #f5f5f5;
+}
+
+.add-item-form input,
+.add-item-form select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #333;
+  width: 100%;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+.add-item-form input::placeholder {
+  color: #aaa;
+}
+
+.add-item-form button {
+  background-color: #2e8b57;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.add-item-form button:hover {
+  background-color: #256d47;
+}
+
+.season-options {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 0.5rem; /* spacing between options */
+  margin-bottom: 1rem;
+}
+
+.season-row {
+  display: flex;
+  align-items: center; /* vertically center checkbox and text */
+  gap: 0.5rem;         /* horizontal spacing between checkbox and text */
+}
+
+.season-row input[type="checkbox"] {
+  /* ensure all checkboxes have the same size/alignment */
+  width: 16px;
+  height: 16px;
+}
+
+.color-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.color-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.color-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* Wishlist Filters */
+.wishlist-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  background-color: #1f1f1f;
+  padding: 12px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.wishlist-filters label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.wishlist-filters select {
+  margin-top: 4px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background-color: #2b2b2b;
+  color: #fff;
+}
+
+.wishlist-filters button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filter-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.filter-btn:hover {
+  background-color: #45a049;
+}
+
+.reset-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.reset-btn:hover {
+  background-color: #da190b;
+}
+
+/* Adjust spacing for small screens */
+@media (max-width: 600px) {
+  .wishlist-filters {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.brand-items-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.brand-items-container .wishlist-item {
+  flex: 1 1 220px; /* same width as wishlist cards */
+}
+
+.brand-items-container .delete-btn {
+  display: none;
+}
+
+.brand-items-container .wishlist-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Inline action wrapper for All Items page */
+.item-actions-inline {
+  display: inline-flex;
+  gap: 0.5rem; /* space between view & add buttons */
+  margin-top: 0.25rem; /* small spacing under card content */
+  align-items: center;
+}
+
+.item-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.item-card .item-image {
+  width: 150px;       /* Set the width you want */
+  height: auto;       /* Maintain aspect ratio */
+  max-height: 150px;  /* Optional: limit max height */
+  object-fit: cover;  /* Optional: crop to fit the box nicely */
+  border-radius: 4px; /* Optional: rounded corners */
+}
+
+
+.item-name {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.item-details {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.item-actions-inline {
+  display: inline-flex;
+  gap: 0.5rem; /* space between buttons */
+  align-items: center;
+}
+
+.add-wishlist-btn {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.add-wishlist-btn:hover {
+  background-color: #fb8c00;
+}
+
+.wishlist-badge {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+}
+
+/* Fade-in animation */
+@keyframes fadeInBadge {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Footer fixed at bottom */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #121212;
+}

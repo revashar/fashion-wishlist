@@ -1,0 +1,17 @@
+<h2 class="page-title">{{title}}</h2>
+
+{{#if brands.length}}
+  <ul class="brand-list">
+    {{#each brands}}
+      <li class="brand-card">
+        <a href="/brands/{{this._id}}">
+          <strong>{{this.name}}</strong>
+        </a>
+        — {{this.itemCount}}
+        {{#if (eq this.itemCount 1)}}item{{else}}items{{/if}}
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No brands available at the moment.</p>
+{{/if}}
