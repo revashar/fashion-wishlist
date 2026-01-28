@@ -1,10 +1,15 @@
 # Fashion Wishlist
 
+## Project Availability
+https://final-project-revashar.onrender.com
+
 ## Overview
 
 Fashion Wishlist is a web application that allows users to curate their dream wardrobe by saving clothing items from their favorite fashion brands. Users can create accounts, select their favorite brands, and build a wishlist of clothing items by entering product details — such as the item name, category, color, size, and a direct link to the brand’s website.
 
 Each brand has its own dedicated page showing all wishlist items users have added from that brand. Users can explore these community wishlists, “heart” their favorite items, and use filters by color, category, or season to find inspiration or track trends. The app helps fashion enthusiasts keep their favorite styles organized while discovering new pieces from others’ wishlists.
+
+Users can also view store locations of their favorited brands via connection to the Google Maps API. 
 
 ## Data Model
 
